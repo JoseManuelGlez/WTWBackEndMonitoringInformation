@@ -8,7 +8,9 @@ import com.example.wtwbackendmonitoringinformation.repositories.IMonitoringInfor
 import com.example.wtwbackendmonitoringinformation.services.interfaces.IMonitoringInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MonitoringInformationServiceImpl implements IMonitoringInformationService {
     @Autowired
     private IMonitoringInformationRepository repository;
@@ -26,7 +28,7 @@ public class MonitoringInformationServiceImpl implements IMonitoringInformationS
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(String id) {
         repository.delete(findAndEnsureExist(id));
     }
 
@@ -55,7 +57,7 @@ public class MonitoringInformationServiceImpl implements IMonitoringInformationS
         return createMonitoringInformationResponse;
     }
 
-    private MonitoringInformation findAndEnsureExist(Long id){
+    private MonitoringInformation findAndEnsureExist(String id){
         return repository.findById(id).orElseThrow(() -> new RuntimeException("Not found"));
     }
 }

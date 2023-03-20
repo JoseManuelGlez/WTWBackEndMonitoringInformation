@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter @Getter
 public class CreateMonitoringInformationResponse {
-    private Long id;
+    private String id;
     private String date;
     private String hour;
     private String soilTemperature;
