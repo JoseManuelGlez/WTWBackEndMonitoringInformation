@@ -18,7 +18,12 @@ public class MonitoringInformationController {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable String id) {
+    public void delete(@PathVariable Long id) {
         service.delete(id);
+    }
+
+    @GetMapping("{espId}")
+    public BaseResponse findByEsp32Id(@PathVariable Long espId){
+        return service.findByEsp32Id(espId);
     }
 }

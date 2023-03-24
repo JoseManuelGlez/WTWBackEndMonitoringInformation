@@ -11,4 +11,5 @@ public class CreateMonitoringInformationRequest {
     private String soilHumidity;
     private String ambientTemperature;
     private String ambientHumidity;
+    private Long espId;
 }

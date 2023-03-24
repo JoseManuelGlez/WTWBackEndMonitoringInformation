@@ -1,17 +1,18 @@
 package com.example.wtwbackendmonitoringinformation.entities;
 
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Document(collection = "monitoringInformation")
+@Entity
+@Table(name = "monitoringInformation")
 public class MonitoringInformation {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String date;
     private String hour;
@@ -19,4 +20,5 @@ public class MonitoringInformation {
     private String soilHumidity;
     private String ambientTemperature;
     private String ambientHumidity;
+    private Long espId;
 }
