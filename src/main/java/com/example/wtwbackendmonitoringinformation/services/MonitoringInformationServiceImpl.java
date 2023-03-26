@@ -23,7 +23,7 @@ public class MonitoringInformationServiceImpl implements IMonitoringInformationS
 
         return BaseResponse.builder()
                 .data(from(repository.save(monitoringInformation)))
-                .message("User created correctly")
+                .message("Information created correctly")
                 .success(Boolean.TRUE)
                 .httpStatus(HttpStatus.CREATED).build();
     }
